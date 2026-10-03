@@ -87,7 +87,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({
     description: '',
     origin: 'Chikmagalur Estate',
     notes: ['Chocolate', 'Hazelnut'],
-    image: '/src/assets/images/latte_art_pour_1791032846968.jpg',
+    image: '/images/latte_art_pour_1791032846968.jpg',
   });
   const [notesInput, setNotesInput] = useState('Chocolate, Hazelnut');
 
@@ -153,7 +153,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({
       description: newItem.description || 'Specialty brew prepared fresh to order.',
       origin: newItem.origin,
       notes: parsedNotes.length ? parsedNotes : ['Rich Crema', 'Aromatic'],
-      image: newItem.image || '/src/assets/images/latte_art_pour_1791032846968.jpg',
+      image: newItem.image || '/images/latte_art_pour_1791032846968.jpg',
     };
 
     const updated = [itemToAdd, ...itemsList];
@@ -167,7 +167,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({
       description: '',
       origin: 'Chikmagalur Estate',
       notes: [],
-      image: '/src/assets/images/latte_art_pour_1791032846968.jpg',
+      image: '/images/latte_art_pour_1791032846968.jpg',
     });
     triggerSaveNotification();
   };
@@ -202,10 +202,21 @@ export const AdminModal: React.FC<AdminModalProps> = ({
   };
 
   const PRESET_IMAGES = [
-    { label: 'Bank More Cafe Interior', path: '/src/assets/images/cafe_interior_bankmore_1791032831382.jpg' },
-    { label: 'Microfoam Latte Art Pour', path: '/src/assets/images/latte_art_pour_1791032846968.jpg' },
-    { label: 'Sub-Zero Nitro Cold Brew', path: '/src/assets/images/nitro_cold_brew_ice_1791032869325.jpg' },
-    { label: 'Fresh Morning French Bakery', path: '/src/assets/images/artisan_bakery_treats_1791032885238.jpg' },
+    { label: 'Bank More Cafe Interior', path: '/images/cafe_interior_bankmore_1791032831382.jpg' },
+    { label: 'Microfoam Latte Art Pour', path: '/images/latte_art_pour_1791032846968.jpg' },
+    { label: 'Sub-Zero Nitro Cold Brew', path: '/images/nitro_cold_brew_ice_1791032869325.jpg' },
+    { label: 'Fresh Morning French Bakery', path: '/images/artisan_bakery_treats_1791032885238.jpg' },
+    { label: 'Rosetta Latte Milk Pour', path: '/images/rosetta-latte-pour.jpg' },
+    { label: 'Iced Cold Brew Swirl', path: '/images/glacier-cold-brew.jpg' },
+    { label: 'Golden Butter Croissant', path: '/images/butter-croissant.jpg' },
+    { label: 'V60 Pour-Over Slow Bar', path: '/images/v60-pour-over.jpg' },
+    { label: 'Caramel Cortado Glass', path: '/images/caramel-cortado.jpg' },
+    { label: 'Sparkling Black Coffee', path: '/images/sparkling-black-coffee.jpg' },
+    { label: 'Espresso Shot', path: '/images/espresso-shot.jpg' },
+    { label: 'Pastry Counter', path: '/images/pastry-counter.jpg' },
+    { label: 'Roasted Coffee Beans', path: '/images/roasted-beans.jpg' },
+    { label: 'Iced Latte & Chemex', path: '/images/iced-latte-chemex.jpg' },
+    { label: 'Morning Black Coffee', path: '/images/morning-black-coffee.jpg' },
   ];
 
   // =========================================================================
