@@ -6,6 +6,7 @@ import { PinnedScrollStage } from './components/PinnedScrollStage';
 import { InteractiveScrollNavigator } from './components/InteractiveScrollNavigator';
 import { MenuSection } from './components/MenuSection';
 import { CafeStorySection } from './components/CafeStorySection';
+import { CoffeeGallerySection } from './components/CoffeeGallerySection';
 import { ReviewsSection } from './components/ReviewsSection';
 import { ReservationSection } from './components/ReservationSection';
 import { CartDrawer } from './components/CartDrawer';
@@ -34,7 +35,13 @@ export default function App() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>(() => {
     try {
       const saved = localStorage.getItem('pw_menu_items');
-      return saved ? JSON.parse(saved) : INITIAL_MENU_ITEMS;
+      if (!saved) return INITIAL_MENU_ITEMS;
+      // Migrate legacy image paths (old /src/assets paths don't exist in production builds)
+      return (JSON.parse(saved) as MenuItem[]).map((item) => {
+        if (!item.image?.startsWith('/src/assets/images/')) return item;
+        const defaultItem = INITIAL_MENU_ITEMS.find((i) => i.id === item.id);
+        return { ...item, image: defaultItem?.image ?? item.image.replace('/src/assets/images/', '/images/') };
+      });
     } catch {
       return INITIAL_MENU_ITEMS;
     }
@@ -280,6 +287,9 @@ export default function App() {
           menuItems={menuItems}
           onAddToCart={handleAddToCart}
         />
+
+        {/* COFFEE PHOTO GALLERY */}
+        <CoffeeGallerySection />
 
         {/* ROASTERY HERITAGE & BANK MORE LAB */}
         <CafeStorySection

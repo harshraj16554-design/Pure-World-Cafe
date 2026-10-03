@@ -19,7 +19,7 @@ export const CafeStorySection: React.FC<CafeStorySectionProps> = ({
           <div className="relative">
             <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-[#292524] shadow-2xl bg-[#141210]">
               <img
-                src="/src/assets/images/cafe_interior_bankmore_1791032831382.jpg"
+                src="/images/cafe_interior_bankmore_1791032831382.jpg"
                 alt="Pure World Cafe Roastery Interior at Bank More"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover"
