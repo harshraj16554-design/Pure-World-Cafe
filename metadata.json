@@ -1,0 +1,6 @@
+{
+  "name": "Pure World Cafe",
+  "description": "Immersive 3D scroll-parallax specialty coffee experience for Pure World Cafe at Bank More, featuring dynamic WebGL coffee cup animations, live steam, milk pour, ice drops, and interactive artisan menu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
